@@ -9,7 +9,7 @@ import { AuthService } from './services/auth/auth.service';
 export class AppComponent {
   title = 'blogger';
 
-  constructor(private auth: AuthService) { }
+  constructor(public auth: AuthService) { }
 
   onLogout() {
     this.auth.logout();
