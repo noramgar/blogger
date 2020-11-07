@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>Fancy Blogger</span>
+    <span><a routerLink="home">Fancy Blogger</a></span>
     <span class="spacer"></span>
     <a mat-button routerLink="/new-user">Register</a>
     <a mat-button *ngIf="!auth.isAuthenticated()" routerLink="/login">Log in</a>
