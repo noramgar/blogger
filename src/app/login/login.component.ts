@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth/auth.service';
-import { map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +11,6 @@ export class LoginComponent implements OnInit {
   errorMessage: string;
   userId: string;
   password: string;
-  res: string;
 
   constructor(private auth: AuthService) { }
 
@@ -22,15 +20,12 @@ export class LoginComponent implements OnInit {
     this.auth.login(userId, password)
       .subscribe(
         response => {
-          this.res = response;
           if (response.token) {
             this.auth.finishAuthentication(response.token)
-          } else {
-            this.errorMessage = 'ERROR!';
+            this.errorMessage = '';
           }
         },
-        error => this.errorMessage = 'ERROR!'
+        error => this.errorMessage = error.error.messsage
       );
   }
-
 }

@@ -31,7 +31,7 @@ export class NewUserComponent implements OnInit {
     this.auth.signup(credentials)
     .subscribe(
       response => this.auth.finishSignup(),
-      error => this.errorMessage = 'Error!'
+      error => this.errorMessage = error.error.messsage
     )
   }
 
