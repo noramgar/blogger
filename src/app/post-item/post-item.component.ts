@@ -1,4 +1,4 @@
-import { Input } from '@angular/core';
+import { EventEmitter, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
@@ -11,8 +11,14 @@ import { UserService } from '../services/user.service';
 export class PostItemComponent implements OnInit {
 
   @Input() item;
+  @Output() deleteClicked = new EventEmitter<string>()
+  openConfirm = false
 
   constructor(public userService: UserService, private router: Router) { }
 
   ngOnInit(): void { }
+
+  onDelete() {
+    this.deleteClicked.emit(this.item.postId)
+  }
 }

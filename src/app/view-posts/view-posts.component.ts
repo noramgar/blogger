@@ -30,4 +30,10 @@ export class ViewPostsComponent implements OnInit {
       console.log('result: ', data)
     })
   }
+
+  deletePost(postId) {
+    this.posts = this.posts.filter(post => {
+      return post.postId !== postId
+    })
+  }
 }
