@@ -21,8 +21,8 @@ export class PostsService {
     });
   }
 
-  Delete(post): Observable<any> {
-    return this.http.delete(`${this.BASE_URL}/Posts/${post.postId}`, {
+  Delete(postId): Observable<any> {
+    return this.http.delete(`${this.BASE_URL}/Posts/${postId}`, {
       headers: new HttpHeaders().set(
         'Authorization',
         `Bearer ${localStorage.getItem('token')}`

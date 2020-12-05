@@ -32,8 +32,8 @@ export class ViewPostsComponent implements OnInit {
   }
 
   deletePost(postId) {
-    this.posts = this.posts.filter(post => {
-      return post.postId !== postId
+    this.postsService.Delete(postId).subscribe(res => {
+      this.loadPosts()
     })
   }
 }
