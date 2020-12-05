@@ -1,10 +1,12 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span><a routerLink="home">Fancy Blogger</a></span>
+    <span><a routerLink="/">Fancy Blogger</a></span>
     <span class="spacer"></span>
     <a mat-button routerLink="/new-user">Register</a>
     <a mat-button *ngIf="!auth.isAuthenticated()" routerLink="/login">Log in</a>
     <a mat-button *ngIf="auth.isAuthenticated()" (click)="onLogout()">Log out</a>
+    <a mat-button *ngIf="auth.isAuthenticated()" routerLink="/create-post">Create Post</a>
+    <a mat-button *ngIf="auth.isAuthenticated()" routerLink="/posts">Posts</a>
   </mat-toolbar-row>
 </mat-toolbar>
 

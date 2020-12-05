@@ -1,0 +1,13 @@
+<mat-card class="my-card">
+    <mat-card-title>{{item.title}}</mat-card-title>
+    <mat-card-content>
+        <p>Written by {{ item.userId }} on {{ item.createdDate | date }}</p>
+        <img *ngIf="item.headerImage" [src]="item.headerImage" alt="headerImage" width="550">
+        <p>{{ item.content }}</p>
+        
+        <div *ngIf="item.userId === userService.currentUser()">
+            <button mat-raised-button color="primary" [routerLink]="['/edit-post', item.postId]">Edit</button>
+            <button mat-raised-button color="primary">Delete</button>
+        </div>
+    </mat-card-content>
+ </mat-card>

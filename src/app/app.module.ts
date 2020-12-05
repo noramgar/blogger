@@ -12,13 +12,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth/auth.service';
 import { HomeComponent } from './home/home.component';
 import { AuthGuardService } from './services/auth/auth-guard.service';
+import { CreatePostComponent } from './create-post/create-post.component';
+import { ViewPostsComponent } from './view-posts/view-posts.component';
+import { PostItemComponent } from './post-item/post-item.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewUserComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    CreatePostComponent,
+    ViewPostsComponent,
+    PostItemComponent,
+    EditPostComponent
   ],
   imports: [
     HttpClientModule,

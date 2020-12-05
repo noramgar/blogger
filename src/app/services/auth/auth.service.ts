@@ -21,7 +21,7 @@ export class AuthService {
 
   finishAuthentication(token): void {
     localStorage.setItem('token', token);
-    this.router.navigate(['home']);
+    this.router.navigate(['']);
   }
 
   finishSignup():void {
